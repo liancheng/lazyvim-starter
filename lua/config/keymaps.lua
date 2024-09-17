@@ -6,6 +6,7 @@
 vim.keymap.del("n", "<S-h>")
 vim.keymap.del("n", "<S-l>")
 
+-- Makes Neovide work with the system clipboard
 if vim.g["neovide"] then
   vim.keymap.set("v", "<D-c>", [["+y]], { desc = "Copy" })
   vim.keymap.set({ "n", "v" }, "<D-v>", [["+p]], { desc = "Paste" })
