@@ -116,4 +116,12 @@ return {
     "nvimdev/dashboard-nvim",
     enabled = false,
   },
+
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+    keys = {
+      { "<leader>gs", vim.cmd.Git, "Open Fugitive" },
+    },
+  },
 }
