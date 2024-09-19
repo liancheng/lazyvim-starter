@@ -11,7 +11,7 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = {
-      -- Use plain ASCII separators.
+      -- Uses plain ASCII separators.
       options = {
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
@@ -24,6 +24,7 @@ return {
     opts = {
       servers = {
         lua_ls = {
+          -- See: https://luals.github.io/wiki/settings/
           settings = {
             Lua = {
               workspace = {
@@ -42,6 +43,7 @@ return {
         },
 
         jsonnet_ls = {
+          -- See: https://github.com/grafana/jsonnet-language-server/blob/698917f/editor/vim/README.md
           settings = {
             formatting = {
               MaxBlankLines = 1,
@@ -64,7 +66,8 @@ return {
   {
     "google/vim-jsonnet",
     init = function()
-      -- Leave formatting to the jsonnet-language-server.
+      -- Leaves formatting to the jsonnet-language-server.
+      -- See the `jsonnet_ls` field in `nvim-lspconfig`.
       vim.g.jsonnet_fmt_on_save = 0
     end,
     config = function()
