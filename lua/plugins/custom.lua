@@ -57,14 +57,6 @@ return {
   },
 
   {
-    "nvim-telescope/telescope.nvim",
-    cmd = "Telescope",
-    keys = {
-      { "<leader>sB", "<cmd>Telescope builtin<CR>", desc = "Builtin pickers" },
-    },
-  },
-
-  {
     "google/vim-jsonnet",
     init = function()
       -- Leaves formatting to the jsonnet-language-server.
