@@ -1,4 +1,5 @@
 -- Customized configuration for LazyVim plugins
+
 return {
   {
     "LazyVim/LazyVim",
@@ -125,6 +126,15 @@ return {
     lazy = false,
     keys = {
       { "<leader>gs", vim.cmd.Git, "Open Fugitive" },
+    },
+  },
+
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        bzl = { "buildifier" },
+      },
     },
   },
 }
