@@ -111,4 +111,20 @@ return {
       },
     },
   },
+
+  {
+    "ibhagwan/fzf-lua",
+    keys = {
+      { "<leader>fB", "<cmd>FzfLua builtin<cr>", desc = "Command History" },
+      {
+        "<leader>f/",
+        function()
+          require("fzf-lua").live_grep({
+            cmd = "git grep --line-number --color=always",
+          })
+        end,
+        desc = "Command History",
+      },
+    },
+  },
 }

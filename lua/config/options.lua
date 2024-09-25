@@ -2,6 +2,11 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- LazyVim options
+do
+  vim.g.lazyvim_picker = "fzf"
+end
+
 -- Configures the Python provider for NeoVim.
 do
   local venv_path = vim.fn.stdpath("config") .. "/.venv"
