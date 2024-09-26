@@ -109,6 +109,12 @@ return {
       formatters_by_ft = {
         bzl = { "buildifier" },
       },
+      formatters = {
+        shfmt = {
+          -- See https://github.com/mvdan/sh/blob/master/cmd/shfmt/shfmt.1.scd
+          args = { "--indent", "2" },
+        },
+      },
     },
   },
 
