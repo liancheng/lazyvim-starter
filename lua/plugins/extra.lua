@@ -21,4 +21,22 @@ return {
       },
     },
   },
+
+  {
+    "almo7aya/openingh.nvim",
+    keys = {
+      {
+        "<leader>G",
+        "<cmd>OpenInGHFile<cr>",
+        mode = "n",
+        desc = "Open file in GitHub",
+      },
+      {
+        "<leader>G",
+        "<cmd>OpenInGHFileLines<cr>",
+        mode = "v",
+        desc = "Open lines in GitHub",
+      },
+    },
+  },
 }
