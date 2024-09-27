@@ -140,6 +140,7 @@ return {
     "ibhagwan/fzf-lua",
     keys = {
       { "<leader>fB", "<cmd>FzfLua builtin<cr>", desc = "Command History" },
+      { "<leader>gi", "<cmd>FzfLua lsp_incoming_calls<cr>", desc = "Incoming Calls" },
       {
         "<leader>f/",
         function()
