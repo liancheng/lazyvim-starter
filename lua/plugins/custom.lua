@@ -119,6 +119,24 @@ return {
   },
 
   {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        markdown = { "markdownlint" },
+      },
+      linters = {
+        ["markdownlint-cli2"] = {
+          args = {
+            "--config",
+            vim.fn.stdpath("config") .. "/lua/plugins/.markdownlint-cli2.yaml",
+            "--",
+          },
+        },
+      },
+    },
+  },
+
+  {
     "ibhagwan/fzf-lua",
     keys = {
       { "<leader>fB", "<cmd>FzfLua builtin<cr>", desc = "Command History" },
