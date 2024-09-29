@@ -44,4 +44,9 @@ return {
     "sindrets/diffview.nvim",
     opts = {},
   },
+
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+  },
 }
