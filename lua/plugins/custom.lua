@@ -102,7 +102,7 @@ return {
         shfmt = {
           -- Indents with 2 spaces instead of tab.
           -- See https://github.com/mvdan/sh/blob/master/cmd/shfmt/shfmt.1.scd
-          args = { "--indent", "2" },
+          args = { "--indent", "2", "--case-indent", "--space-redirects" },
         },
       },
     },
