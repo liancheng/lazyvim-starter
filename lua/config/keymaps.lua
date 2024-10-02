@@ -6,6 +6,15 @@
 vim.keymap.del("n", "<S-h>")
 vim.keymap.del("n", "<S-l>")
 
+vim.keymap.set("n", "<leader>uH", "<cmd>set invhlsearch<cr>", {
+  desc = "Toggle Highlight Search",
+  remap = true,
+})
+
+-- Unifies cycling through buffers and tabs
+vim.keymap.set("n", "gt", "]b", { desc = "Next Buffer", remap = true })
+vim.keymap.set("n", "gT", "[b", { desc = "Prev Buffer", remap = true })
+
 -- Makes Neovide work with the system clipboard
 if vim.g["neovide"] then
   vim.keymap.set("v", "<D-c>", [["+y]], { desc = "Copy" })

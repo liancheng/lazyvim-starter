@@ -72,17 +72,6 @@ return {
   },
 
   {
-    "folke/which-key.nvim",
-    keys = {
-      {
-        "<leader>uH",
-        "<cmd>set invhlsearch<CR>",
-        desc = "Toggle highlight search",
-      },
-    },
-  },
-
-  {
     "folke/noice.nvim",
     -- Noice causes cursor blinking excessively in Neovide.
     enabled = not vim.g["neovide"],
