@@ -73,7 +73,7 @@ return {
 
   {
     "folke/noice.nvim",
-    -- Noice causes cursor blinking excessively in Neovide.
+    -- Noice causes the cursor to blink excessively in Neovide.
     enabled = not vim.g["neovide"],
   },
 
