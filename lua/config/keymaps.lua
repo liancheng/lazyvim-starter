@@ -24,29 +24,35 @@ if vim.g["neovide"] then
 end
 
 local hunk_format = function()
+  local F = require("fun")
   local hunks = require("gitsigns").get_hunks()
   local format = require("conform").format
 
-  for i = #hunks, 1, -1 do
-    local hunk = hunks[i]
-
-    if hunk ~= nil and hunk.type ~= "delete" then
+  F.range(#hunks, 1, -1)
+    :map(function(i)
+      return hunks[i]
+    end)
+    :filter(function(hunk)
+      return hunk ~= nil and hunk.type ~= "delete"
+    end)
+    :each(function(hunk)
       local start = hunk.added.start
-      local last = start + hunk.added.count
+      local last = start + hunk.added.count - 1
+      local last_line = vim.api.nvim_buf_get_lines(0, last - 1, last, true)[1]
 
-      local last_hunk_line = vim.api.nvim_buf_get_lines(0, last - 2, last - 1, true)[1]
-      local range = {
-        start = { start, 0 },
-        ["end"] = { last - 1, last_hunk_line:len() },
-      }
-
-      format({ range = range })
-    end
-  end
+      format({
+        range = {
+          start = { start, 0 },
+          ["end"] = { last, last_line:len() },
+        },
+      })
+    end)
 end
 
 vim.api.nvim_create_user_command("HunkFormat", hunk_format, {
   desc = "Format hunks",
 })
 
-vim.keymap.set({ "n", "v" }, "<leader>ch", "<cmd>HunkFormat<cr>", { desc = "Format hunks" })
+vim.keymap.set({ "n", "v" }, "<leader>ch", "<cmd>HunkFormat<cr>", {
+  desc = "Format hunks",
+})
