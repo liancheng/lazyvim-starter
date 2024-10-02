@@ -24,7 +24,7 @@ end
 -- Neovide GUI options.
 do
   if vim.g["neovide"] then
-    vim.g.neovide_cursor_animation_length = 0.05
+    vim.g.neovide_cursor_animation_length = 0
     vim.opt.guifont = "CaskaydiaMono Nerd Font:h16"
   end
 end
