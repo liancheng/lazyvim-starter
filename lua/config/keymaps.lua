@@ -39,7 +39,6 @@ local hunk_format = function()
       local start = hunk.added.start
       local last = start + hunk.added.count - 1
       local last_line = vim.api.nvim_buf_get_lines(0, last - 1, last, true)[1]
-
       format({
         range = {
           start = { start, 0 },
