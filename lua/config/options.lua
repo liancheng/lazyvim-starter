@@ -9,13 +9,13 @@ end
 
 -- Configures the Python provider for NeoVim.
 do
-  local venv_path = vim.fn.stdpath("config") .. "/.venv"
+  local venv_path = vim.fn.stdpath "config" .. "/.venv"
   local uv = vim.uv or vim.loop
 
   if not uv.fs_stat(venv_path) then
     vim.g.python3_host_prog = venv_path .. "/bin/python"
-    vim.fn.system({ "uv", "venv" })
-    vim.fn.system({ "uv", "pip", "install", "pynvim" })
+    vim.fn.system { "uv", "venv" }
+    vim.fn.system { "uv", "pip", "install", "pynvim" }
   end
 
   vim.g.python3_host_prog = venv_path .. "/bin/python"

@@ -36,7 +36,7 @@ return {
                 },
                 library = {
                   -- For hammerspoon Lua configuration support.
-                  string.format("%s/.hammerspoon/Spoons/EmmyLua.spoon/annotations", os.getenv("HOME")),
+                  string.format("%s/.hammerspoon/Spoons/EmmyLua.spoon/annotations", os.getenv "HOME"),
                 },
               },
             },
@@ -118,7 +118,7 @@ return {
         ["markdownlint-cli2"] = {
           args = {
             "--config",
-            vim.fn.stdpath("config") .. "/lua/plugins/.markdownlint-cli2.yaml",
+            vim.fn.stdpath "config" .. "/lua/plugins/.markdownlint-cli2.yaml",
             "--",
           },
         },
@@ -134,9 +134,9 @@ return {
       {
         "<leader>f/",
         function()
-          require("fzf-lua").live_grep({
+          require("fzf-lua").live_grep {
             cmd = "git grep --line-number --color=always",
-          })
+          }
         end,
         desc = "Command History",
       },
