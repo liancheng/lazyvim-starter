@@ -24,21 +24,23 @@ if vim.g["neovide"] then
 end
 
 local format_hunks = function()
-  require("fun")
-    .iter(require("std").ireverse(require("gitsigns").get_hunks()))
+  local F = require "fun"
+  local std = require "std"
+  local hunks = require("gitsigns").get_hunks()
+
+  F.iter(std.ireverse(hunks))
     :filter(function(_) return _ ~= nil and _.type ~= "delete" end)
-    :map(function(hunk)
+    :each(function(hunk)
       local start = hunk.added.start
       local last = start + hunk.added.count - 1
       local last_line = vim.api.nvim_buf_get_lines(0, last - 1, last, true)[1]
-      return {
+      require("conform").format {
         range = {
           start = { start, 0 },
           ["end"] = { last, last_line:len() },
         },
       }
     end)
-    :each(require("conform").format)
 end
 
 vim.keymap.set({ "n", "v" }, "<leader>ch", format_hunks, {

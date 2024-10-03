@@ -36,7 +36,10 @@ return {
                 },
                 library = {
                   -- For hammerspoon Lua configuration support.
-                  string.format("%s/.hammerspoon/Spoons/EmmyLua.spoon/annotations", os.getenv "HOME"),
+                  string.format(
+                    "%s/.hammerspoon/Spoons/EmmyLua.spoon/annotations",
+                    os.getenv "HOME"
+                  ),
                 },
               },
             },
