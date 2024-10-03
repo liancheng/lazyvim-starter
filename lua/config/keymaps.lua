@@ -25,16 +25,13 @@ end
 
 local hunk_format = function()
   local F = require("fun")
+  local lambda = require("std.functional").lambda
   local hunks = require("gitsigns").get_hunks()
   local format = require("conform").format
 
   F.range(#hunks, 1, -1)
-    :map(function(i)
-      return hunks[i]
-    end)
-    :filter(function(hunk)
-      return hunk ~= nil and hunk.type ~= "delete"
-    end)
+    :map(lambda "= hunks[_1]")
+    :filter(lambda '= _1 ~= nil and _1.type ~= "delete"')
     :each(function(hunk)
       local start = hunk.added.start
       local last = start + hunk.added.count - 1
