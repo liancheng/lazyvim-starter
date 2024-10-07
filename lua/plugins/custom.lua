@@ -50,7 +50,7 @@ return {
           -- See: https://github.com/grafana/jsonnet-language-server/blob/698917f/editor/vim/README.md
           settings = {
             formatting = {
-              MaxBlankLines = 1,
+              MaxBlankLines = 2,
               StringStyle = "double",
             },
           },
