@@ -32,14 +32,6 @@ return {
   },
 
   {
-    "vhyrro/luarocks.nvim",
-    priority = 1024,
-    opts = {
-      rocks = { "fun", "stdlib", "std.functional", "magick" },
-    },
-  },
-
-  {
     "3rd/image.nvim",
     opts = {
       backend = "kitty",
