@@ -34,9 +34,4 @@ return {
       { "_", "<cmd>Oil --float .<cr>", { desc = "Open CWD (Oil)" } },
     },
   },
-
-  {
-    "3rd/image.nvim",
-    opts = {},
-  },
 }
