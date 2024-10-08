@@ -28,7 +28,11 @@ return {
 
   {
     "stevearc/oil.nvim",
-    opts = {},
+    config = true,
+    keys = {
+      { "-", "<cmd>Oil --float<cr>", { desc = "Open Parent Directory (Oil)" } },
+      { "_", "<cmd>Oil --float .<cr>", { desc = "Open CWD (Oil)" } },
+    },
   },
 
   {
