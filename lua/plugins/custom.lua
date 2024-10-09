@@ -11,6 +11,7 @@ return {
   {
     "catppuccin/nvim",
     opts = {
+      no_italic = true,
       dim_inactive = {
         enabled = true,
       },
