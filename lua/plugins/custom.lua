@@ -9,6 +9,15 @@ return {
   },
 
   {
+    "catppuccin/nvim",
+    opts = {
+      dim_inactive = {
+        enabled = true,
+      },
+    },
+  },
+
+  {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = {
