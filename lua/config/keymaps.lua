@@ -46,3 +46,5 @@ end
 vim.keymap.set({ "n", "v" }, "<leader>ch", format_hunks, {
   desc = "Format Hunks",
 })
+
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit cwd=%:p:h<cr>", { desc = "Open Neogit" })

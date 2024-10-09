@@ -41,4 +41,14 @@ return {
       { "_", "<cmd>Oil --float .<cr>", { desc = "Open CWD (Oil)" } },
     },
   },
+
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "ibhagwan/fzf-lua",
+    },
+    config = true,
+  },
 }
