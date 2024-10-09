@@ -24,6 +24,13 @@ return {
       { "<leader>do", vim.cmd.DiffviewOpen, desc = "Open Diffview" },
       { "<leader>dc", vim.cmd.DiffviewClose, desc = "Close Diffview" },
     },
+    opts = {
+      view = {
+        merge_tool = {
+          layout = "diff4_mixed",
+        },
+      },
+    },
   },
 
   {
