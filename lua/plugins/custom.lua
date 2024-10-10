@@ -1,5 +1,8 @@
 -- Customized configuration for LazyVim plugins
 
+local LazyVim = require "lazyvim.util"
+local icons = LazyVim.config.icons
+
 return {
   {
     "LazyVim/LazyVim",
@@ -22,10 +25,30 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = {
-      -- Uses plain ASCII separators.
       options = {
+        -- Uses plain ASCII separators.
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
+      },
+      sections = {
+        -- Shows full path by customizing the `length` option in `LazyVim.lualine.pretty_path`.
+        -- Source: https://github.com/LazyVim/LazyVim/blob/13a4a84/lua/lazyvim/plugins/ui.lua#L129-L142
+        lualine_c = {
+          LazyVim.lualine.root_dir(),
+          {
+            "diagnostics",
+            symbols = {
+              error = icons.diagnostics.Error,
+              warn = icons.diagnostics.Warn,
+              info = icons.diagnostics.Info,
+              hint = icons.diagnostics.Hint,
+            },
+          },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          { LazyVim.lualine.pretty_path { length = math.huge } },
+        },
+        -- Hides the clock.
+        lualine_z = {},
       },
     },
   },
