@@ -125,6 +125,13 @@ return {
     "folke/noice.nvim",
     -- Noice causes the cursor to blink excessively in Neovide.
     enabled = not vim.g["neovide"],
+    opts = {
+      -- Adds borders to LSP popup windows.
+      -- See: https://github.com/LazyVim/LazyVim/issues/556#issuecomment-1867981476
+      presets = {
+        lsp_doc_border = true,
+      },
+    },
   },
 
   {
@@ -186,6 +193,17 @@ return {
           }
         end,
         desc = "Command History",
+      },
+    },
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      -- Adds borders to completion popup windows.
+      window = {
+        completion = require("cmp").config.window.bordered(),
+        documentation = require("cmp").config.window.bordered(),
       },
     },
   },
