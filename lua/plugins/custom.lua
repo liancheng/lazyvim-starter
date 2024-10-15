@@ -79,6 +79,20 @@ return {
           },
         },
 
+        -- Defers linting and import organization to Ruff.
+        pyright = {
+          settings = {
+            pyright = {
+              disableOrganizeImports = true,
+            },
+            python = {
+              analysis = {
+                ignore = { "*" },
+              },
+            },
+          },
+        },
+
         jsonnet_ls = {
           -- See: https://github.com/grafana/jsonnet-language-server/blob/698917f/editor/vim/README.md
           settings = {
